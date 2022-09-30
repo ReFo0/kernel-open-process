@@ -3,4 +3,3 @@ Example :)
 
 Features
 - ZwOpenProcess :)
-- PsGetProcessSectionBaseAddress :)
