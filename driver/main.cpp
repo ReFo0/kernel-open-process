@@ -16,14 +16,6 @@ NTSTATUS command(PDEVICE_OBJECT device_obj, PIRP irp) {
 	if (stacklocation) {
 		if (buffer && sizeof(*buffer) >= sizeof(req)) {
 			const auto ctl_code = stacklocation->Parameters.DeviceIoControl.IoControlCode;
-			if (ctl_code == base_adresss) {
-				PEPROCESS process = nullptr;
-				auto status = PsLookupProcessByProcessId(HANDLE(buffer->process), &process);
-				if (!NT_SUCCESS(status))
-					return 0;
-				buffer->address = reinterpret_cast<uintptr_t>(PsGetProcessSectionBaseAddress(process));
-				ObDereferenceObject(process);
-			}
 			if (ctl_code == open_process) {
 				PEPROCESS process = nullptr;
 				HANDLE pid = 0;
