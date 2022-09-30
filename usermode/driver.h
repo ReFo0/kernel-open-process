@@ -23,13 +23,6 @@ public:
 		DeviceIoControl(driver, open_process, &request, sizeof(request), &request, sizeof(request), 0, 0);
 		return request.address;
 	}
-
-	uintptr_t baseaddress(const uintptr_t process) {
-		req request;
-		request.process = process;
-		DeviceIoControl(driver, base_adresss, &request, sizeof(request), &request, sizeof(request), 0, 0);
-		return request.address;
-	}
 };
 
 std::uintptr_t process_id(const std::string& name)
