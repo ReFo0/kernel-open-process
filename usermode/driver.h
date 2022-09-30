@@ -3,7 +3,6 @@
 #include <TlHelp32.h>
 
 #define open_process CTL_CODE(FILE_DEVICE_UNKNOWN, 0x186, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
-#define base_adresss CTL_CODE(FILE_DEVICE_UNKNOWN, 0x187, METHOD_BUFFERED, FILE_SPECIAL_ACCESS)
 
 struct req {
 	uintptr_t process;
