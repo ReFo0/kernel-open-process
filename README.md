@@ -1,5 +1,5 @@
 # kernel-openprocess
-Example :)
+A project I made for fun.
 
 Features
-- ZwOpenProcess :)
+* ZwOpenProcess
